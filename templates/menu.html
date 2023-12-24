@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+          <!-- Page Header Start -->
+          <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Food Menu</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page Header End -->
+        <section class="menu-food mt-3 d-flex justify-content-start flex-wrap">
+            {% for cat in category %} 
+            <div class="card border border-dark overflow-hidden " style="width: 18rem; margin:1rem; border-radius:20px;">
+                <img class="card-img-top" src="{{cat.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{cat.name}}</h5>
+                  <p class="card-text text-dark">{{cat.description}}</p>
+                  <a href="#" class="btn btn-primary">Try Now</a>
+                </div>
+              </div>
+            {% endfor %}
+            
+        </section>
+{% endblock content %}
